@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { PropertyService } from './property.service';
 import { Store} from '@ngrx/store';
-import { AppState } from '../models/app-state';
-import * as propertyActions from './../actions/property.actions';
+import * as fromStore from './../store';
 import { Property } from '../models/property';
+// import { properties } from '../reducers/property.reducer';
 
 @Component({
   selector: 'app-property',
@@ -16,18 +16,21 @@ export class PropertyComponent implements OnInit {
   // propertyList: any;
 
   constructor(
-    // private propertyService: PropertyService
-    private store: Store<AppState>
+    private propertyService: PropertyService,
+    private store: Store<fromStore.ProductsState>
    ) {
-    this.propertyList$ = this.store.select(state => state.properties);
-  }
-
-  ngOnInit() {
     this.getProperties();
   }
 
+  ngOnInit() {
+    // debugger;
+    this.propertyList$ = this.store.select(fromStore.getAllProperties);
+    // this.store.dispatch(new fromStore.LoadProperties());
+    // this.getProperties();
+  }
+
   getProperties() {
-    this.store.dispatch(new propertyActions.LoadPropertiesAction());
+    this.store.dispatch(new fromStore.LoadProperties());
     // this.propertyList$ = this.propertyService.loadProperties();//.subscribe(prop => this.propertyList = prop);
   }
 

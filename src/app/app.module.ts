@@ -4,25 +4,27 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
-import { propertyReducer } from './reducers/property.reducer';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { reducers, effects } from './store';
 import { EffectsModule } from '@ngrx/effects';
-import { PropertyEffects } from './effects/property.effects';
-import { PropertyComponent } from './property/property.component';
+import { PropertyEffects } from './store/effects/property.effects';
 import { PropertyService } from './property/property.service';
-import { HttpModule } from '@angular/http';
+import { PropertyModule } from './property/property.module';
 import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    PropertyComponent
+    AppComponent
   ],
   imports: [
     CommonModule,
     BrowserModule,
-    HttpModule,
-    StoreModule.forRoot({property: propertyReducer}),
-    EffectsModule.forRoot([PropertyEffects])
+    PropertyModule,
+    StoreModule.forRoot({}),
+    EffectsModule.forRoot([]),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25
+    })
   ],
   providers: [ PropertyService ],
   bootstrap: [AppComponent]

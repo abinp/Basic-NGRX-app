@@ -2,6 +2,8 @@
   property works!
 </p>
 {{propertyList$ | async}}
-<!-- <div *ngFor="let p of propertyList">
-    <p>{{p.property_name}}</p>
+<!-- <div *ngIf="propertyList$|async as prop" >
+    <div *ngFor="let p of prop">
+        <p>{{p.property_name}}</p>
+    </div>
 </div> -->
