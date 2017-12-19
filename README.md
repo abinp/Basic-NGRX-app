@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 This project is based on my little understanding of the NGRX architecture. I learned the NGRX architecture using `Todd Motto`'s youtube playlist `https://www.youtube.com/watch?v=N_UQx8dPPkc&list=PLW2eQOsUPlWJRfWGOi9gZdc3rE4Fke0Wv`.
 
-The backend for this code is a simple Node App.
+The backend for this code is a simple Node App. See `https://github.com/abinp/Simple-Node-App`.
 
 ## Development server
 
