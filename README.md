@@ -1,6 +1,10 @@
-# Frontend
+# Basic NGRX App
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.5.
+
+This project is based on my little understanding of the NGRX architecture. I learned the NGRX architecture using `Todd Motto`'s youtube playlist `https://www.youtube.com/watch?v=N_UQx8dPPkc&list=PLW2eQOsUPlWJRfWGOi9gZdc3rE4Fke0Wv`.
+
+The backend for this code is a simple Node App.
 
 ## Development server
 
